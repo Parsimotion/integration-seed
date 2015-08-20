@@ -3,6 +3,12 @@
 require("coffee-script/register")
 #[^] last version of coffee
 
+# To debug with web-client:
+# export NODE_ENV=
+# Find "livereload" and put false in the boolean variables.
+# In express:dev task, put debug: false
+# In server.js put 9001 as port or export PORT=9001
+
 module.exports = (grunt) ->
   try
     localConfig = require("./server/config/local.env")
