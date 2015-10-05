@@ -2,6 +2,7 @@ Promise = require("bluebird")
 should = require("chai").should()
 request = Promise.promisifyAll require("supertest")
 app = include("app").app
+
 config = include("config/environment")
 
 describe "SettingsController", ->
