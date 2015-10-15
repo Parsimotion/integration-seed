@@ -14,6 +14,8 @@ errorHandler = require("errorhandler")
 path = require("path")
 config = require("./environment")
 passport = require("passport")
+cors = require("cors")
+
 module.exports = (app) ->
   env = app.get("env")
   app.set "views", config.root + "/server/views"
@@ -35,6 +37,7 @@ module.exports = (app) ->
   app.use cookieSession(keys: [process.env.COOKIE_KEY or "integration-seed-cookie-key"])
   app.use passport.initialize()
   app.use passport.session()
+  app.use cors()
 
   if "production" is env
     app.use favicon(path.join(config.root, "public", "favicon.ico"))
