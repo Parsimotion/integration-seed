@@ -15,7 +15,7 @@ module.exports = (req, res, next) ->
       return reject() if statusCode isnt 200
 
       User.findOneAsync(providerId: body.id).then (user) ->
-        if not user? throw "user not found"
+        if not user? then throw "user not found"
         req.user = user
         next()
     .catch reject
