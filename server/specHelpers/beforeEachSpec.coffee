@@ -1,5 +1,6 @@
 Promise = require("bluebird")
 connection = require("mongoose").connection
+seed = require("./seed")
 _ = require("lodash")
 
 # Clean all the db
@@ -11,4 +12,4 @@ beforeEach ->
     .values()
     .value()
 
-  Promise.all $cleanCollections
+  Promise.all($cleanCollections).then seed.createAll

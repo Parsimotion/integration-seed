@@ -452,7 +452,7 @@ module.exports = (grunt) ->
       options:
         reporter: "spec"
 
-      src: ["server/srv-globals.js", "server/beforeEachSpec.coffee", "server/**/*.spec.coffee"]
+      src: ["server/srv-globals.js", "server/specHelpers/beforeEachSpec.coffee", "server/**/*.spec.coffee"]
 
     protractor:
       options:
