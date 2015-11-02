@@ -3,6 +3,9 @@
 Main application file
 ###
 
+# Prettify errors
+PrettyError = require("pretty-error") ; new PrettyError().start()
+
 # Set default node environment to development
 process.env.NODE_ENV = process.env.NODE_ENV or "development"
 express = require("express")
