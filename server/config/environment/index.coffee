@@ -35,7 +35,7 @@ all =
     clientSecret: process.env.PRODUCTECA_CLIENTSECRET or "secret"
     callbackURL: (process.env.DOMAIN or "") + "/auth/producteca/callback"
 
-authServerUrl = process.env.AUTHORIZATION_SERVER_URL
+authServerUrl = process.env.AUTHORIZATION_SERVER_URL || "http://auth.producteca.com"
 if authServerUrl?
   _.assign all.producteca,
     authorizationURL: "#{authServerUrl}/oauth/authorise"
