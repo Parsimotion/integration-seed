@@ -7,6 +7,7 @@ module.exports = (router) ->
         if not res._headerSent then res.send body
 
       allIsBroken = (err) =>
+        console.log err.stack
         res.status(500).send err
         throw err
 
