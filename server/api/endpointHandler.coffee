@@ -17,6 +17,7 @@ module.exports = (router) ->
           .catch? (err) =>
             if err.statusCode?
               res.status(err.statusCode).send err.body
+              throw err
             else allIsBroken err
       catch err
         allIsBroken err
