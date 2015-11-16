@@ -7,15 +7,12 @@ module.exports = (router) ->
         if not res._headerSent then res.send body
 
       handleError = (err) =>
-        logStack = (err) =>
-          console.log err.stack if err.stack?
-
         if err.statusCode?
           res.status(err.statusCode).send err.body
-          logStack err
         else
           res.status(500).send err
-          logStack err
+
+        console.log err.stack if err.stack?
 
       result = null
       try
