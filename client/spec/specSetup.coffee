@@ -8,6 +8,7 @@ beforeEach ->
   inject ($controller, $rootScope, _$httpBackend_) ->
     $httpBackend = _$httpBackend_
     $scope = $rootScope.$new()
+    $httpBackend.whenGET(/\/locale/ ).respond {}
 
     getController = (name, dependencies) ->
       defaults = _.partialRight(_.assign, (a, b) ->

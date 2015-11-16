@@ -18,6 +18,7 @@ module.exports = (app) ->
   app.use "/api/hooks/webjob", require("./api/hooks/webjob")
   app.use "/api/settings", require("./api/settings")
   app.use "/auth", require("./auth")
+  app.use "/locale", require("./locale")
   app.get "/logout", auth.logout
 
   # --- PUT MORE ROUTES HERE ---
