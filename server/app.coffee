@@ -7,6 +7,7 @@ Main application file
 PrettyError = require("pretty-error") ; new PrettyError().start()
 
 # Set default node environment to development
+if process.env.NODE_ENV is "local" then process.env.NODE_ENV = ""
 process.env.NODE_ENV = process.env.NODE_ENV or "development"
 express = require("express")
 mongoose = require("mongoose")
