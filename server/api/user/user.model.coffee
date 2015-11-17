@@ -6,8 +6,6 @@ Promise.promisifyAll mongoose
 
 Schema = mongoose.Schema
 
-authTypes = ["producteca"]
-
 UserSchema = new Schema
   name: String
   email:
