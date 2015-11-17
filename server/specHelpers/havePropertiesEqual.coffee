@@ -3,8 +3,7 @@ expect = require("chai").expect
 clean = (it) -> JSON.stringify it
 
 havePropertiesEqual = (oldObject, newObject) ->
-  return false if not oldObject? and newObject?
-  return false if oldObject? and not newObject?
+  return oldObject is newObject if (not oldObject? or not newObject?)
 
   keys = _.keys newObject
 
