@@ -1,3 +1,5 @@
+_ = require("lodash")
+
 module.exports = (router) ->
 
   endpointHandler = (action) =>
@@ -28,4 +30,10 @@ module.exports = (router) ->
     middlewares[lastIndex] = endpointHandler middlewares[lastIndex]
     router[verb].apply router, [path].concat middlewares
 
-  { endpointHandler, route }
+  verbs =
+    _(["get", "post", "put", "delete"])
+      .indexBy()
+      .mapValues (verb) -> _.partial route, verb
+      .value()
+
+  _.merge { endpointHandler }, route: verbs
