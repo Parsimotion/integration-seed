@@ -26,7 +26,7 @@
     "nock": "^3.1.0",
     "oauth": "~0.9.12",
     "passport": "~0.2.0",
-    "passport-producteca": "^0.0.6",
+    "passport-producteca": "^0.0.7",
     "pretty-error": "^1.2.0",
     "producteca-sdk": "0.0.91",
     "request": "^2.58.0",
