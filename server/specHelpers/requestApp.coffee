@@ -1,7 +1,6 @@
 Promise = require("bluebird")
-request = Promise.promisifyAll require("supertest")
 nock = require("nock")
-app = include("app").app
+agent = require("./agent")
 _ = require("lodash")
 
 nockProductecaUser = ->
@@ -12,14 +11,15 @@ nockProductecaUser = ->
 module.exports = (verb, route, options, headers = {}) ->
   nockProductecaUser()
 
-  req = request(app)[verb](route)
-    .type "json"
-    .set "Authorization", "Bearer sarasa"
+  agent().login().then (agent) ->
+    req = agent[verb](route)
+      .type "json"
+      .set "Authorization", "Bearer sarasa"
 
-  _.forOwn headers, (value, name) ->
-    req.set name, value
+    _.forOwn headers, (value, name) ->
+      req.set name, value
 
-  req
-    .send options?.body
-    .expect (options?.expectedStatus || 200)
-    .endAsync()
+    req
+      .send options?.body
+      .expect (options?.expectedStatus || 200)
+      .endAsync()
