@@ -8,14 +8,13 @@ class Home
   constructor: (@Model, @user) ->
 
   getAll: =>
-    @Model.findAsync(@_query()).then (entities) =>
-      Promise.all entities.map @_populate_
+    @Model.findAsync @_query()
 
   get: (id) =>
     @Model.findOneAsync @_query @_makeId(id)
     .then (entity) =>
       if not entity? then throw exceptions.entityNotFound
-      @_populate entity
+      entity
 
   create: (entity) =>
     @Model.createAsync @_query entity
@@ -34,4 +33,3 @@ class Home
 
   # can be overriden...
   _transformUpdate_: (model) => model
-  _populate_: (model) => model
