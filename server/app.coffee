@@ -1,4 +1,3 @@
-"use strict"
 ###*
 Main application file
 ###

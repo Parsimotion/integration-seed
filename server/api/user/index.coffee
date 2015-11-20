@@ -1,4 +1,3 @@
-"use strict"
 express = require("express")
 controller = require("./user.controller")
 config = include("config/environment")

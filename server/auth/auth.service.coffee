@@ -1,7 +1,6 @@
-"use strict"
 passport = require("passport")
 config = include("config/environment")
-User = include("api/user/user.model")
+User = include("domain/schemas/user.model")
 
 exports.authenticated = (req, res, next) ->
   reject = -> res.send 401

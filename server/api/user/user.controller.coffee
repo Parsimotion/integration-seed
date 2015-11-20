@@ -1,5 +1,4 @@
-"use strict"
-User = require("./user.model")
+User = include("domain/schemas/user.model")
 passport = require("passport")
 config = include("config/environment")
 

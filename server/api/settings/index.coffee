@@ -1,4 +1,3 @@
-"use strict"
 express = require("express")
 controller = require("./settings.controller.coffee")
 auth = include("auth/auth.service")

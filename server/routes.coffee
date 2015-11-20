@@ -1,7 +1,6 @@
 ###*
 Main application routes
 ###
-"use strict"
 errors = require("./components/errors")
 auth = require("./auth/auth.service")
 
@@ -15,7 +14,6 @@ module.exports = (app) ->
   # Insert routes below
   app.get "/", home
   app.use "/api/users", require("./api/user")
-  app.use "/api/hooks/webjob", require("./api/hooks/webjob")
   app.use "/api/settings", require("./api/settings")
   app.use "/auth", require("./auth")
   app.use "/locale", require("./locale")

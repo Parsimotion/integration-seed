@@ -1,4 +1,3 @@
-"use strict"
 passport = require("passport")
 
 passport.serializeUser (tokens, done) ->

@@ -1,7 +1,6 @@
 ###*
 Express configuration
 ###
-"use strict"
 express = require("express")
 favicon = require("serve-favicon")
 morgan = require("morgan")

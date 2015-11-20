@@ -1,5 +1,5 @@
 Promise = require("bluebird")
-User = include("api/user/user.model")
+User = include("domain/schemas/user.model")
 request = Promise.promisifyAll require("request")
 productecaOptions = include("config/environment").producteca
 

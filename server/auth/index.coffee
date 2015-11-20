@@ -1,8 +1,6 @@
-"use strict"
-
 express = require("express")
 config = include("config/environment")
-User = include("api/user/user.model")
+User = include("domain/schemas/user.model")
 
 # Passport Configuration
 require("./passport.serializer")

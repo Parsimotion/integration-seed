@@ -1,4 +1,3 @@
-"use strict"
 express = require("express")
 passport = require("passport")
 auth = include("auth/auth.service")
