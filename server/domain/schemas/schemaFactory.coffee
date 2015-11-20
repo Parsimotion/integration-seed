@@ -12,7 +12,6 @@ module.exports =
 
     schema.method methods if methods?
     if addToJSON isnt false
-      console.log "aslfkaslkfj"
       schema.method "toJSON", ->
         obj = @toObject()
         _(obj)
