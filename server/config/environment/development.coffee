@@ -4,4 +4,4 @@ module.exports =
 
   # MongoDB connection options
   mongo:
-    uri: "mongodb://localhost/integration-seed-dev"
+    uri: process.env.MONGO_URI || "mongodb://localhost/integration-seed-dev"
