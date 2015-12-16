@@ -13,8 +13,9 @@ module.exports = (verb, route, options, headers = {}) ->
 
   agent().login().then (agent) ->
     req = agent[verb](route)
-      .type "json"
       .set "Authorization", "Bearer sarasa"
+
+    if options?.body? then req.type "json"
 
     _.forOwn headers, (value, name) ->
       req.set name, value
