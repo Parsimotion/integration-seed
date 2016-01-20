@@ -11,18 +11,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'client/bower_components/lodash/lodash.js',
       'client/bower_components/jquery/dist/jquery.js',
       'client/bower_components/angular/angular.js',
+      'client/bower_components/angular-resource-watcher/build/angular-resource-watcher.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       'client/bower_components/angular-resource/angular-resource.js',
       'client/bower_components/angular-cookies/angular-cookies.js',
       'client/bower_components/angular-sanitize/angular-sanitize.js',
-      'client/bower_components/angular-route/angular-route.js',
       'client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'client/bower_components/lodash/dist/lodash.compat.js',
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
-      'client/bower_components/rxjs/dist/rx.all.js',
-      'client/bower_components/angular-rx/dist/rx.angular.js',
       'client/bower_components/angular-translate/angular-translate.js',
       'client/bower_components/angular-translate-loader-url/angular-translate-loader-url.js',
       'client/spec/specSetup.coffee',
