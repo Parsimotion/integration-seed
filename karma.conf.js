@@ -31,16 +31,13 @@ module.exports = function(config) {
       'client/app/**/*.coffee',
       'client/components/**/*.js',
       'client/components/**/*.coffee',
-      'client/app/**/*.jade',
-      'client/components/**/*.jade',
       'client/app/**/*.html',
       'client/components/**/*.html'
     ],
 
     preprocessors: {
-      '**/*.jade': 'ng-jade2js',
-      '**/*.html': 'html2js',
-      '**/*.coffee': 'coffee'
+      '**/*.html': ['html2js'],
+      '**/*.coffee': ['coffee']
     },
 
     ngHtml2JsPreprocessor: {
@@ -49,6 +46,18 @@ module.exports = function(config) {
 
     ngJade2JsPreprocessor: {
       stripPrefix: 'client/'
+    },
+
+    coffeePreprocessor: {
+      // options passed to the coffee compiler
+      options: {
+        bare: true,
+        sourceMap: false
+      },
+      // transforming the filenames
+      transformPath: function(path) {
+        return path.replace(/\.coffee$/, '.js')
+      }
     },
 
     // list of files / patterns to exclude
@@ -79,6 +88,8 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: false,
+
+    plugins : ['karma-jasmine', 'karma-phantomjs-launcher', 'karma-coffee-preprocessor']
   });
 };
