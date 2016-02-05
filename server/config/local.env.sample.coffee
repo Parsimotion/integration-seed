@@ -17,4 +17,4 @@ module.exports =
 
   AUTHORIZATION_SERVER_URL: "http://auth-development.producteca.com"
   PRODUCTECA_API: "http://development-api.producteca.com"
-  MONGO_URI: "a connection string to a mongodb database"
+  # MONGO_URI: "a connection string to a mongodb database"
