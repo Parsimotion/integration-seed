@@ -1,7 +1,6 @@
 Promise = require("bluebird")
-should = require("chai").should()
-request = Promise.promisifyAll require("supertest")
-app = include("app").app
+require("chai").should()
+requestApp = include("specHelpers/requestApp")
 
 config = include("config/environment")
 
@@ -10,8 +9,5 @@ describe "SettingsController", ->
     config.producteca.uri = "http://urlDeProducteca.com"
 
   it "returns the api url based on the config", ->
-    request(app)
-      .get("/api/settings/env")
-      .expect 200
-      .endAsync().then ({ body }) ->
-        body.should.eql apiUrl: "http://urlDeProducteca.com"
+    requestApp("get", "/api/settings/env").then ({ body }) ->
+      body.should.eql apiUrl: "http://urlDeProducteca.com"

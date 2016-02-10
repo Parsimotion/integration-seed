@@ -32,7 +32,7 @@ module.exports = (router) ->
 
   verbs =
     _(["get", "post", "put", "delete"])
-      .indexBy()
+      .keyBy()
       .mapValues (verb) -> _.partial route, verb
       .value()
 
