@@ -1,6 +1,5 @@
-Promise = require("bluebird")
 User = include("domain/schemas/user.model")
-request = Promise.promisifyAll require("request")
+request = require("request-promise")
 productecaOptions = include("config/environment").producteca
 
 module.exports = (req, res, next) ->
@@ -10,12 +9,9 @@ module.exports = (req, res, next) ->
 
   reject = -> res.status(401).send "Can't authenticate with Producteca. Check the 'Authorization' header."
 
-  request.getAsync(productecaOptions.profileUrl, options)
-    .spread ({ statusCode, body }) ->
-      return reject() if statusCode isnt 200
-
-      User.findOneAsync(providerId: body.id).then (user) ->
-        if not user? then throw "user not found"
-        req.user = user
-        next()
-    .catch reject
+  request.get(productecaOptions.profileUrl, options).then (body) ->
+    User.findOneAsync(providerId: body.id).then (user) ->
+      if not user? then throw "user not found"
+      req.user = user
+      next()
+  .catch reject
