@@ -41,3 +41,10 @@ module.exports =
       else throw "unknown `from` or `to`"
 
     schema.plugin denormalize, options
+
+  joinSchemasOf: (father, son, foreignKey) ->
+    getProperties = (it) -> it.schema.propertiesDefinition
+
+    _.assign {}, getProperties(father),
+      _.mapKeys getProperties(son), (value, key) ->
+        "#{foreignKey}_#{key}"
