@@ -13,5 +13,6 @@ module.exports = (req, res, next) ->
     User.findOneAsync(providerId: body.id).then (user) ->
       if not user? then throw "user not found"
       req.user = user
+      req.token = token
       next()
   .catch reject
