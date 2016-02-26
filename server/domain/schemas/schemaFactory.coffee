@@ -29,9 +29,11 @@ module.exports =
   denormalize: (schema, { from, to}) ->
     options =
       if to?
+        { foreignSchemaName, foreignProperty } = to
+
         _.mapValues schema.propertiesDefinition, (value, key) ->
-          to: to
-          ref: key
+          to: foreignSchemaName
+          ref: foreignProperty
       else if from?
         { localProperty, foreignSchema } = from
 
