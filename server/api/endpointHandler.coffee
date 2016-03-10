@@ -24,8 +24,8 @@ module.exports = (router) ->
         return handleError err
 
       result?
-      .catch? handleError
       .then? respond
+      .catch? handleError
 
   route = (verb, path, middlewares...) ->
     lastIndex = middlewares.length - 1
