@@ -23,8 +23,7 @@ module.exports = (router) ->
       catch err
         return handleError err
 
-      result?
-      .then? respond
+      result?.then? respond
       .catch? handleError
 
   route = (verb, path, middlewares...) ->
