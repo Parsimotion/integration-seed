@@ -1,6 +1,6 @@
-requiredProcessEnv = (name) ->
-  throw new Error("You must set the " + name + " environment variable")  unless process.env[name]
-  process.env[name]
+requireProcessEnv = (names...) ->
+  names.forEach (name) ->
+    throw new Error("You must set the " + name + " environment variable") unless process.env[name]
 
 path = require("path")
 _ = require("lodash")
