@@ -9,12 +9,13 @@ module.exports = (router) ->
         if not res._headerSent then res.send body
 
       handleError = (err) =>
+        console.log err.stack if err.stack?
+        if res._headersSent then return
+
         if err.statusCode?
           res.status(err.statusCode).send err.body
         else
           res.status(500).send err
-
-        console.log err.stack if err.stack?
 
       result = null
       try

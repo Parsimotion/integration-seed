@@ -1,3 +1,6 @@
+# Environment variables
+# Export your process.env variables here!
+
 Promise = require("bluebird")
 connection = require("mongoose").connection
 seed = require("./seed")

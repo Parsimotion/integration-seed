@@ -5,19 +5,20 @@ nock = require("nock")
 authServer = include("config/environment").producteca
 mockedUser = require("./mockedUser")
 
+token = "randomAccessToken"
 module.exports = ->
   nock(authServer.tokenURL)
     .post ""
-    .reply 200, access_token: "randomAccessToken"
+    .reply 200, access_token: token
 
   nock(authServer.profileUrl)
-    .get "?access_token=randomAccessToken"
+    .get "?access_token=#{token}"
     .reply 200, mockedUser, {
-      'Authorization': 'Bearer randomAccessToken'
-      'Content-Type': 'application/json'
+      'Authorization': "Bearer #{token}"
+      'Content-Type': "application/json"
     }
 
   agent = request.agent app
   agent.login = ->
-    @get("/auth/producteca/callback?code=randomCode").endAsync().then -> agent
+    @get("/auth/wholesaler/callback?code=randomCode").endAsync().then -> agent
   agent
