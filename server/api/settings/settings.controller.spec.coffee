@@ -1,6 +1,6 @@
 Promise = require("bluebird")
 require("chai").should()
-requestApp = include("specHelpers/requestApp")
+selfRequest = include("specHelpers/selfRequest")
 
 config = include("config/environment")
 
@@ -9,5 +9,5 @@ describe "SettingsController", ->
     config.producteca.uri = "http://urlDeProducteca.com"
 
   it "returns the api url based on the config", ->
-    requestApp("get", "/api/settings/env").then ({ body }) ->
+    selfRequest.get("/api/settings/env").then ({ body }) ->
       body.should.eql apiUrl: "http://urlDeProducteca.com"
