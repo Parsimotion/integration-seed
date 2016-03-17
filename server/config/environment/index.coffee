@@ -1,6 +1,10 @@
 requireProcessEnv = (names...) ->
-  names.forEach (name) ->
-    throw new Error("You must set the " + name + " environment variable") unless process.env[name]
+  missingEnvVar = (names.filter (name) -> not process.env[name]?)[0]
+  if missingEnvVar? and process.env.NODE_ENV isnt "test"
+    throw new Error("You must set the #{missingEnvVar} environment variable")
+
+# Use requireProcessEnv to force the server to stop if any environment variable isn't setted. Example:
+# requireProcessEnv "DROPBOX_ID", "DROPBOX_SECRET"
 
 path = require("path")
 _ = require("lodash")
