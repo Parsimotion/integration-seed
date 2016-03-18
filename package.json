@@ -86,6 +86,7 @@
     "longjohn": "0.2.4",
     "nock": "3.1.0",
     "open": "0.0.4",
+    "phantomjs-prebuilt": "^2.1.5",
     "requirejs": "2.1.11",
     "sinon": "1.10.3",
     "sinon-chai": "2.5.0",
