@@ -6,6 +6,7 @@ user = new User(
   email: "test@test.com"
 )
 _ = require("lodash")
+ValidationError = require("mongoose").Error.ValidationError
 
 describe "User Model", ->
   it "should store the provider and its id", ->
@@ -19,13 +20,14 @@ describe "User Model", ->
         user.should.have.property "providerId", 999
 
   it "should fail when saving a duplicate user", (done) ->
-    user.saveAsync().then ->
+    user.saveAsync()
+    .then ->
       userDup = new User(email: "test@test.com")
-      userDup.save (err) ->
-        should.exist err ; done()
+      userDup
+      .saveAsync()
+      .catch (e) -> done()
 
   it "should fail when saving without an email", (done) ->
     user.email = ""
-    user.save (err) ->
-      should.exist err
-      done()
+    user.saveAsync()
+    .catch (ValidationError, e) -> done()
