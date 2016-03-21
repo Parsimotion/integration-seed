@@ -20,5 +20,5 @@ module.exports = ->
 
   agent = request.agent app
   agent.login = ->
-    @get("/auth/wholesaler/callback?code=randomCode").endAsync().then -> agent
+    @get("/auth/producteca/callback?code=randomCode").endAsync().then -> agent
   agent
