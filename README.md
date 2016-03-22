@@ -1,6 +1,9 @@
 # integration-seed
 Please, replace the string "integration-seed" with the name you want, in all the project.
 
+## Login
+This integration doesn't login automatically, because it runs in an `iframe` inside the Producteca's client. If you are using it outside the Producteca environment (in development, for example) you should login manually going to `http://localhost:9001/auth/producteca`.
+
 ## Setup
 
 ```bash
