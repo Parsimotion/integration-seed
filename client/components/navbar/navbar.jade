@@ -1,25 +1,18 @@
-div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
-  div.container
-    div.navbar-header(ng-init='isCollapsed = true')
-      button.navbar-toggle(type='button', ng-click='isCollapsed = !isCollapsed')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='/') integration-seed
-
-    div#navbar-main.navbar-collapse.collapse(collapse='isCollapsed')
-      ul.nav.navbar-nav
-        li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
-          a(ng-href='{{item.link}}') {{item.title}}
-
-      ul.nav.navbar-nav.navbar-right
-        li
-          p.navbar-text Hola {{ getCurrentUser().name }}
-
-        li(ng-class='{active: isActive("/settings")}')
-          a(href='/settings')
-            span.glyphicon.glyphicon-cog
-
-        li
-          a(href='', ng-click='logout()') Cerrar sesión
+.row.app-brand
+.row
+  nav.navbar.app-navbar.navbar-default(ng-controller='NavbarCtrl')
+    .container-fluid
+      .navbar-header
+        a.navbar-brand(href='#')
+          i.fa.fa-puzzle-piece
+        ol.breadcrumb.app-breadcrumb
+          li
+            a(ui-sref='main.settings')
+              img.app-icon(src='../assets/images/logo-mini.png')
+              strong(translate='') integrationName
+          li(ng-repeat='stateName in path()', ng-show="$index > 0")
+            a(ng-href='{{ getUrl($index) }}', translate='') {{ stateName }}
+      ul.nav.navbar-nav.navbar-right.app-menu
+        li(ui-sref-active="active")
+          a(ui-sref='main.settings')
+            span(translate='') settings

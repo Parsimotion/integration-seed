@@ -1,1 +1,6 @@
-{}
+{
+  "integrationName": "integration-seed",
+  "loading": "Cargando...",
+  "save": "Guardar",
+  "settings": "Configuración"
+}

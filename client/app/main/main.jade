@@ -1,6 +1,4 @@
-div(ng-include='"components/navbar/navbar.html"')
-
-.container
-  | Esta es una integración de prueba. Este texto debería ser borrado.
-  br
-  | Siéntase libre de explorar el sitio.
+.app-container
+  div(ng-include='"components/navbar/navbar.html"')
+  div(ng-include='"components/loading/loading.html"')
+  .app-content(ui-view='')
