@@ -39,7 +39,3 @@ grunt serve
 grunt test:client
 grunt test:server
 ```
-
-## Supertests
-
-Check the `server/api/settings/settings.controller.spec.coffee` file.

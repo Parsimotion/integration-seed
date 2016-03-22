@@ -1,7 +1,6 @@
-@import 'base';
 // Component styles are injected through grunt
 // injector
-@import 'account/settings/settings.scss';
-@import 'base.scss';
 @import 'main/main.scss';
+@import 'styles/base.scss';
+@import 'navbar/loading.scss';
 // endinjector
