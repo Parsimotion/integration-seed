@@ -4,20 +4,17 @@
   "dependencies": {
     "angular": "1.5.0",
     "jquery": "^1.11.0",
-    "bootstrap": "^3.1.1",
-    "bootstrap-sass-official": "^3.1.1",
     "angular-resource": "1.5.0",
     "angular-cookies": "1.5.0",
     "angular-sanitize": "1.5.0",
     "angular-bootstrap": "0.11.0",
-    "font-awesome": "^4.1.0",
     "lodash": "^4.6.1",
     "angular-ui-router": "^0.2.15",
     "angular-translate": "^2.8.1",
     "angular-translate-loader-url": "^2.8.1",
     "ngSmoothScroll": "angular-smooth-scroll#*",
     "angular-resource-watcher": "~0.0.6",
-    "bootstrapteca": "bootstrapteca-test#~0.0.11"
+    "bootstrapteca": "bootstrapteca#~0.0.15"
   },
   "devDependencies": {
     "angular-mocks": "1.5.0",
