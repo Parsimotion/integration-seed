@@ -12,9 +12,9 @@ module.exports = (grunt) ->
     localConfig = require("./server/config/local.env")
   catch e
     warn = ->
-      console.log "----------------------------------------------------------------------------------------------------"
+      console.log "--------------------------------------------------------------------------------"
       console.log "WARNING: YOU DON'T HAVE A server/config/local.env.coffee. YOU WANT ONE OF THESE."
-      console.log "----------------------------------------------------------------------------------------------------"
+      console.log "--------------------------------------------------------------------------------"
     warn()
     setInterval warn, 1000
 
