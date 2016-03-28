@@ -11,8 +11,14 @@ module.exports = (grunt) ->
   try
     localConfig = require("./server/config/local.env")
   catch e
-    localConfig = {}
+    warn = ->
+      console.log "----------------------------------------------------------------------------------------------------"
+      console.log "WARNING: YOU DON'T HAVE A server/config/local.env.coffee. IS VERY LIKELY THAT YOU WANT ONE OF THESE"
+      console.log "----------------------------------------------------------------------------------------------------"
+    warn()
+    setInterval warn, 1000
 
+    localConfig = {}
 
   azureWebsite = "integration-seed" + if process.env.BRANCH_NAME is "master" then "" else "-#{process.env.BRANCH_NAME}"
   azureGit = "#{azureWebsite}.scm.azurewebsites.net:443/integration-seed.git"
