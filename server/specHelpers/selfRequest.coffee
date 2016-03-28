@@ -29,7 +29,7 @@ selfRequest = (verb, route) ->
 module.exports =
   withBody: (body) -> @_set "body", body
   withBasicAuth: (credentials) -> @_set "basicAuthCredentials", credentials
-  withHeaders: (headers) -> @_set "headers", @_set "headers", credentials
+  withHeaders: (headers) -> @_set "headers", headers
   withExpectedStatus: (expectedStatus) -> @_set "expectedStatus", expectedStatus
   get: _.partial selfRequest, "get"
   post: _.partial selfRequest, "post"
