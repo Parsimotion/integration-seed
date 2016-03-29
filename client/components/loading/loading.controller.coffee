@@ -3,4 +3,5 @@ app.controller 'LoadingCtrl', ($scope, $rootScope) ->
     $scope.isLoading = true
 
   $rootScope.$on '$stateChangeSuccess', ->
+    $scope.clearError()
     $scope.isLoading = false
