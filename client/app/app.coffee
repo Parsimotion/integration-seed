@@ -23,3 +23,23 @@ window.app = angular.module 'integration-seed-app', [
   $translateProvider.useUrlLoader '/locale'
   $translateProvider.useSanitizeValueStrategy(null)
   $translateProvider.determinePreferredLanguage()
+
+# Errors
+.run ($rootScope) ->
+  $rootScope.setError = (error) ->
+    $rootScope.error = error
+
+  $rootScope.clearError = ->
+    $rootScope.error = null
+
+# Load
+.run ($rootScope) ->
+  $rootScope.load = (promise) ->
+    $rootScope.isLoading = true
+    promise
+      .catch (e) ->
+        if e.status is 400 and e.data?.code?
+          $rootScope.setError "error.#{e.data.code}"
+        throw e
+      .finally ->
+        $rootScope.isLoading = false
