@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module 'integration-seed-app'
 .config ($stateProvider) ->
   $stateProvider

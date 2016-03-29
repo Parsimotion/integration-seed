@@ -1,5 +1,3 @@
-'use strict'
-
 app.controller 'NavbarCtrl', ($scope, $state) ->
   $scope.path = -> $state.current.name.split "."
   $scope.getUrl = (index) ->

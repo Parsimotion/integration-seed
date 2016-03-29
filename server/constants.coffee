@@ -1,5 +1,3 @@
-"use strict"
-
 module.exports = (req, res) ->
   res.writeHead 200,
     "Content-Type": "application/javascript"

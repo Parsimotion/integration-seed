@@ -1,5 +1,3 @@
-'use strict'
-
 window.app = angular.module 'integration-seed-app', [
   'ngCookies',
   'ngResource',

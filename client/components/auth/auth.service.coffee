@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module 'integration-seed-app'
 .factory 'Auth', ($location, $rootScope, $http, User, $cookieStore, $q) ->
   currentUser = User.get()

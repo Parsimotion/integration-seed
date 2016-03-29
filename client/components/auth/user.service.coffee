@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module 'integration-seed-app'
 .factory 'User', ($resource) ->
   $resource '/api/users/:id/:controller',
