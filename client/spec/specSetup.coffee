@@ -5,6 +5,12 @@ getController = null
 beforeEach ->
   module "integration-seed-app"
 
+  # Tests constants.js
+  # ---------------------------
+  angular.module("integration-seed-app").constant "ACCESS_TOKEN", "AnAccessToken"
+  angular.module("integration-seed-app").constant "PRODUCTECA_API", "/api-mock"
+  # ---------------------------
+
   inject ($controller, $rootScope, _$httpBackend_) ->
     $httpBackend = _$httpBackend_
     $scope = $rootScope.$new()

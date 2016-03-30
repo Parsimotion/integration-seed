@@ -1,6 +1,16 @@
 // Karma configuration
 // http://karma-runner.github.io/0.10/config/configuration-file.html
 
+/*
+This is a list of dependencies that are used to load the app.
+The dependencies listed in client/app/app.coffee must be included here if you want working tests.
+Otherwise, they will throw an error like this:
+  remove me dummy FAILED
+    Error: [$injector:modulerr] Failed to instantiate module...
+
+You must set the environment variables at client/spec/specSetup.coffee too!
+*/
+
 module.exports = function(config) {
   config.set({
     // base path, that will be used to resolve files and exclude
@@ -23,6 +33,7 @@ module.exports = function(config) {
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'client/bower_components/angular-translate/angular-translate.js',
       'client/bower_components/angular-translate-loader-url/angular-translate-loader-url.js',
+      'client/bower_components/ngSmoothScroll/build/ng-smoothscroll.js',
       'client/spec/specSetup.coffee',
       'client/spec/matchers/*.coffee',
       'client/app/app.js',
