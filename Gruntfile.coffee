@@ -523,7 +523,6 @@ module.exports = (grunt) ->
 
         files:
           ".tmp/app/app.css": "<%= yeoman.client %>/app/app.scss"
-          ".tmp/app/landing.css": "<%= yeoman.client %>/app/base.scss"
 
     injector:
       options: {}
