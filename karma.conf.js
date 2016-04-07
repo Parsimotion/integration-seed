@@ -36,6 +36,7 @@ module.exports = function(config) {
       'client/bower_components/ngSmoothScroll/build/ng-smoothscroll.js',
       'client/spec/specSetup.coffee',
       'client/spec/matchers/*.coffee',
+      'client/spec/**/*.spec.coffee',
       'client/app/app.js',
       'client/app/app.coffee',
       'client/app/**/*.js',
