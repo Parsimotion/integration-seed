@@ -33,7 +33,6 @@ module.exports = function(config) {
       'client/bower_components/angular-ui-router/release/angular-ui-router.js',
       'client/bower_components/angular-translate/angular-translate.js',
       'client/bower_components/angular-translate-loader-url/angular-translate-loader-url.js',
-      'client/bower_components/ngSmoothScroll/build/ng-smoothscroll.js',
       'client/spec/specSetup.coffee',
       'client/spec/matchers/*.coffee',
       'client/spec/**/*.spec.coffee',

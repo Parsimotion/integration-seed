@@ -6,7 +6,6 @@ window.app = angular.module 'integration-seed-app', [
   'ui.bootstrap',
   'pascalprecht.translate'
   'resource.watcher'
-  'SmoothScroll'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
   $urlRouterProvider
