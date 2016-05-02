@@ -4,10 +4,13 @@
 Promise = require("bluebird")
 connection = require("mongoose").connection
 seed = require("./seed")
+nock = require("nock")
 _ = require("lodash")
 
 # Clean all the db
 beforeEach ->
+  nock.cleanAll()
+
   collections = Promise.promisifyAll connection.collections
 
   $cleanCollections = _(collections)
