@@ -13,7 +13,7 @@
     "angular-translate": "^2.8.1",
     "angular-translate-loader-url": "^2.8.1",
     "angular-resource-watcher": "~0.1.0",
-    "bootstrapteca": "bootstrapteca#~0.0.19"
+    "bootstrapteca": "bootstrapteca#~0.0.24"
   },
   "devDependencies": {
     "angular-mocks": "1.5.0",
