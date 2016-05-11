@@ -4,7 +4,7 @@ module.exports = (req, res) ->
 
   constants = [
     key: "ACCESS_TOKEN"
-    value: req.user.accessToken
+    value: req.user.tokens.producteca
   ,
     key: "PRODUCTECA_API"
     value: process.env.PRODUCTECA_API or "http://api.producteca.com"
