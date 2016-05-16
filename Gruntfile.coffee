@@ -388,7 +388,6 @@ module.exports = (grunt) ->
           dest: "<%= yeoman.dist %>"
           src: [
             "package.json"
-            "web.config"
             "server/**/*"
             "App_Data/**/*"
           ]
