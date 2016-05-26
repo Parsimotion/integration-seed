@@ -8,17 +8,20 @@ require("coffee-script/register")
 # In server.js put 9001 as port or export PORT=9001
 
 module.exports = (grunt) ->
-  try
-    localConfig = require("./server/config/local.env")
-  catch e
-    warn = ->
-      console.log "--------------------------------------------------------------------------------"
-      console.log "WARNING: YOU DON'T HAVE A server/config/local.env.coffee. YOU WANT ONE OF THESE."
-      console.log "--------------------------------------------------------------------------------"
-    warn()
-    setInterval warn, 1000
-
-    localConfig = {}
+  _ = require("lodash")
+  localConfig =
+    if not _.includes(grunt.cli.tasks[0], "test")
+      try
+        require("./server/config/local.env")
+      catch e
+        warn = ->
+          console.log "--------------------------------------------------------------------------------"
+          console.log "WARNING: YOU DON'T HAVE A server/config/local.env.coffee. YOU WANT ONE OF THESE."
+          console.log "--------------------------------------------------------------------------------"
+        warn()
+        setInterval warn, 1000
+        {}
+    else {}
 
   azureWebsite = "integration-seed" + if process.env.BRANCH_NAME is "master" then "" else "-#{process.env.BRANCH_NAME}"
   azureGit = "#{azureWebsite}.scm.azurewebsites.net:443/integration-seed.git"
