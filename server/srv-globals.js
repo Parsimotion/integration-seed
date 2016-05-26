@@ -1,3 +1,6 @@
+if (process.env.NEW_RELIC_APP_NAME !== undefined)
+  require("newrelic");
+
 require("coffee-script/register");
 
 // --------
