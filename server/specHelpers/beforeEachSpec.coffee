@@ -7,6 +7,10 @@ seed = require("./seed")
 nock = require("nock")
 _ = require("lodash")
 
+# Disable net connections
+nock.disableNetConnect()
+nock.enableNetConnect('127.0.0.1')
+
 # Clean all the db
 beforeEach ->
   nock.cleanAll()
