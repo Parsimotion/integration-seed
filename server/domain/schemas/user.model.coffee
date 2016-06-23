@@ -17,7 +17,4 @@ module.exports = create
     tokens:
       producteca: String
 
-    settings:
-      saved: Boolean
-
   addToJSON: false
