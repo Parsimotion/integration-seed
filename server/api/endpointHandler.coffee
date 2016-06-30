@@ -16,7 +16,7 @@ module.exports = (router) ->
         if err.statusCode?
           res.status(err.statusCode).send err.body
         else
-          res.status(500).send err
+          res.status(500).send (err.stack || err)
 
       result = null
       try
