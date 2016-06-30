@@ -6,11 +6,12 @@ module.exports = (router) ->
     (req, res, next) =>
 
       respond = (body) =>
-        if not res._headerSent then res.send body
+        return if res.headersSent
+        res.send body
 
       handleError = (err) =>
         console.log err.stack if err.stack?
-        if res._headersSent then return
+        return if res.headersSent
 
         if err.statusCode?
           res.status(err.statusCode).send err.body
