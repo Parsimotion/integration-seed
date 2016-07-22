@@ -1,4 +1,4 @@
-should = require("chai").should()
+should = require("should")
 User = require("./user.model")
 user = new User(
   provider: "producteca"
