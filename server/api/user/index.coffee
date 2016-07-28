@@ -1,10 +1,9 @@
 express = require("express")
-controller = require("./user.controller")
-config = include("config/environment")
+controller = require("./assignedproducts.controller")
 auth = include("auth/auth.service")
-
 router = express.Router()
+{ route } = include("api/endpointHandler") router
 
-router.get "/me", auth.authenticated, controller.me
+route.get "/me", auth.authenticated, controller.me
 
 module.exports = router
