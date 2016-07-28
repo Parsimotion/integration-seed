@@ -4,6 +4,8 @@ auth = include("auth/auth.service")
 router = express.Router()
 { route } = include("api/endpointHandler") router
 
-route.get "/me", auth.authenticated, controller.me
+router.use auth.authenticated
+
+route.get "/me", controller.me
 
 module.exports = router
