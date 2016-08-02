@@ -1,6 +1,7 @@
 should = require("should")
 User = require("./user.model")
 user = new User(
+  _id: 1
   provider: "producteca"
   name: "Fake User"
   email: "test@test.com"
@@ -9,20 +10,18 @@ _ = require("lodash")
 ValidationError = require("mongoose").Error.ValidationError
 
 describe "User Model", ->
-  it "should store the provider and its id", ->
+  it "should store the producteca id", ->
     new User(
+      _id: 999
       email: 'juanpablo@gmail.com'
-      provider: 'producteca'
-      providerId: 999
     ).saveAsync().then ->
-      User.findOneAsync(providerId: 999).then (user) ->
-        user.should.have.property "provider", "producteca"
-        user.should.have.property "providerId", 999
+      User.findByIdAsync(_id: 999).then (user) ->
+        should.exist user
 
   it "should fail when saving a duplicate user", (done) ->
     user.saveAsync()
     .then ->
-      userDup = new User(email: "test@test.com")
+      userDup = new User(email: "test@test.com", _id: 2)
       userDup
       .saveAsync()
       .catch (e) -> done()

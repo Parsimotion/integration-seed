@@ -4,6 +4,8 @@ module.exports = create
   name: "User"
 
   properties:
+    _id: Number
+
     name: String
     email:
       type: String
@@ -11,10 +13,7 @@ module.exports = create
       required: true
       unique: true
 
-    provider: String
-    providerId: Number
-
     tokens:
       producteca: String
 
-  addToJSON: false
+  addToJSON: true
