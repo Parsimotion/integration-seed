@@ -5,7 +5,7 @@ exports.setup = (User, config) ->
   passport.use new ProductecaStrategy(
     config.producteca
   , (accessToken, _, profile, done) ->
-    User.findOne { provider: "producteca", providerId: profile.id }, (err, user) ->
+    User.findById profile.id, (err, user) ->
       return done err if err
 
       setTokenAndSave = =>
@@ -16,11 +16,10 @@ exports.setup = (User, config) ->
       return done null, setTokenAndSave() if user?
 
       user = new User
+        _id: profile.id
         name: "#{profile.profile.firstName} #{profile.profile.lastName}"
         email: profile.email
         username: profile.credentials.username
-        provider: "producteca"
-        providerId: profile.id
         tokens:
           producteca: accessToken
 
