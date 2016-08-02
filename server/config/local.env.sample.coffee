@@ -15,6 +15,7 @@ module.exports =
   PRODUCTECA_CLIENTID: DEVELOPMENT
   PRODUCTECA_CLIENTSECRET: "random localhost integration secret!"
 
-  AUTHORIZATION_SERVER_URL: "http://auth-development.producteca.com"
-  PRODUCTECA_API: "http://development-api.producteca.com"
+  AUTHORIZATION_SERVER_URL: "http://producteca-oauth-development.azurewebsites.net"
+  PRODUCTECA_API: "http://parsimotion-api-development.azurewebsites.net"
+  MASTER_TOKEN: "you know the token :)"
   # MONGO_URI: "a connection string to a mongodb database"
