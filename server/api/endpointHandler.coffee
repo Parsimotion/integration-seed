@@ -10,7 +10,6 @@ module.exports = (router) ->
         res.send body
 
       handleError = (err) =>
-        console.log err, "HOOO"
         console.log err.stack if err.stack?
         return if res.headersSent
 

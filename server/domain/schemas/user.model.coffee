@@ -15,6 +15,9 @@ module.exports = create
 
     tokens:
       producteca: String
+      
+    settings:
+      example: String
 
     settings:
       example: String
