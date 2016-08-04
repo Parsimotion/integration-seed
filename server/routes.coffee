@@ -16,6 +16,7 @@ module.exports = (app) ->
   # Insert routes below
   app.get "/", home
   app.use "/api/users", require("./api/user")
+  app.use "/api/settings", require("./api/settings")
   app.use "/auth", require("./auth")
   app.get "/constants.js", constants
   app.use "/locale", require("./locale")

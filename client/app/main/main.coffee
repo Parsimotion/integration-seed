@@ -9,3 +9,6 @@ angular.module 'integration-seed-app'
     url: 'settings'
     templateUrl: 'app/main/settings/settings.html'
     controller: 'SettingsCtrl'
+    controllerAs: "ctrl"
+    resolve:
+      settings: (Settings) -> Settings.get()

@@ -2,5 +2,9 @@ header.row
   h2(translate='') settings
 form(name="default", watcher-submit='')
   section.row
-    h3 Place your settings
-    p here!
+    .form-horizontal
+      .form-group
+        .control-label.col-xs-8(translate='') example-field
+        .col-xs-26.stick-left
+          input.form-control(ng-model='ctrl.settings.example', required='', type="text", placeholder='{{ "example-placeholder" | translate }}')
+  watcher(watch-resource='ctrl.settings')

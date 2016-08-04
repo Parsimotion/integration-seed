@@ -1,1 +1,4 @@
-app.controller 'SettingsCtrl', ($scope) ->
+app.controller 'SettingsCtrl', (settings) ->
+  new class SettingsCtrl
+    constructor: ->
+      @settings = settings
