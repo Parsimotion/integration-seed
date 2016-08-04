@@ -5,7 +5,7 @@ exports.setup = (User, config) ->
   passport.use new ProductecaStrategy(
     config.producteca
   , (accessToken, _, profile, done) ->
-    User.findById profile.id, (err, user) ->
+    User.findById profile.company.id, (err, user) ->
       return done err if err
 
       setTokenAndSave = =>
