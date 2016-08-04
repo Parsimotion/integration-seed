@@ -8,6 +8,7 @@ PRODUCTION = "5"
 
 module.exports =
 
+  BLUEBIRD_W_FORGOTTEN_RETURN: "false"
   DOMAIN: "http://localhost:9001"
   SESSION_SECRET: "a session secret"
   COOKIE_KEY: "a signature"
