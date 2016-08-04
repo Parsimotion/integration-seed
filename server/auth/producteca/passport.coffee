@@ -16,7 +16,7 @@ exports.setup = (User, config) ->
       return done null, setTokenAndSave() if user?
 
       user = new User
-        _id: profile.id
+        _id: profile.company.id
         name: "#{profile.profile.firstName} #{profile.profile.lastName}"
         email: profile.email
         username: profile.credentials.username
