@@ -15,3 +15,10 @@ abs_path = function(path) {
 global.include = function(file) {
   return require(abs_path(file));
 };
+
+// ECONNRESET
+process.on("uncaughtException", function (err) {
+  if (_.includes(err.toString(), "ECONNRESET")) {
+    console.error(err);
+  } else throw err
+});
