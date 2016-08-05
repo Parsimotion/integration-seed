@@ -17,6 +17,7 @@ global.include = function(file) {
 };
 
 // ECONNRESET
+_ = require("lodash")
 process.on("uncaughtException", function (err) {
   if (_.includes(err.toString(), "ECONNRESET")) {
     console.error(err);
