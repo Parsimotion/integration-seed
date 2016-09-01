@@ -5,4 +5,4 @@ exports.get = (req, res) ->
 
 exports.update = (req, res) ->
   _.assign req.user.settings, req.body
-  req.user.saveAsync()
+  req.user.saveAsync().then -> req.user.settings
