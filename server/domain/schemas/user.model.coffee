@@ -19,7 +19,4 @@ module.exports = create
     settings:
       example: String
 
-    settings:
-      example: String
-
   addToJSON: true
