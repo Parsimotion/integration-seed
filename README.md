@@ -1,9 +1,9 @@
 # integration-seed
 Please, replace the string "integration-seed" with the name you want, in all the project.
 
-## Very Important!!! If you don't read then a cat will be killed.
+## Very Important!!! If you don't read then a kitten will be killed.
 
-If you update from integration-seed 1.0 then you should migrate users and yours references (User[providerId] -> User[\_id]).
+If you update from integration-seed 1.0 then you should migrate users and user's references (User[providerId] -> User[\_id]).
 
 ## Login
 This integration doesn't login automatically, because it runs in an `iframe` inside the Producteca's client. If you are using it outside the Producteca environment (in development, for example) you should login manually going to `http://localhost:9001/auth/producteca`.
