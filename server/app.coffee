@@ -4,6 +4,8 @@ Main application file
 
 # Prettify errors
 PrettyError = require("pretty-error") ; new PrettyError().start()
+Promise = require("bluebird")
+Promise.config { warnings: false }
 
 # Set default node environment to development
 if process.env.NODE_ENV is "local" then process.env.NODE_ENV = ""
