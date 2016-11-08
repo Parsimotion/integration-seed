@@ -13,7 +13,7 @@ _ = require("lodash")
 nock.disableNetConnect()
 nock.enableNetConnect('127.0.0.1')
 
-# mongoose.connect config.mongo.uri, config.mongo.options mmm!
+mongoose.connect config.mongo.uri, config.mongo.options
 
 # Clean all the db
 beforeEach ->
