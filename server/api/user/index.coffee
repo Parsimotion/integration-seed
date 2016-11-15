@@ -2,7 +2,7 @@ express = require("express")
 controller = require("./user.controller")
 auth = include("auth/auth.service")
 router = express.Router()
-{ route } = include("api/endpointHandler") router
+{ route } = require("endpoint-handler") router
 
 router.use auth.authenticated
 
