@@ -18,7 +18,7 @@ module.exports = (app) ->
   app.use "/api/users", require("./api/user")
   app.use "/api/settings", require("./api/settings")
   app.use "/auth", require("./auth")
-  app.get "/constants.js", constants
+  app.get "/constants.js", auth.authenticated, constants
   app.use "/locale", require("./locale")
   app.get "/logout", auth.logout
 

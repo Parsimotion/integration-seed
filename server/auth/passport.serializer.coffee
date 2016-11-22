@@ -1,7 +1,8 @@
+_ = require "lodash"
 passport = require("passport")
 
-passport.serializeUser (tokens, done) ->
-  encodedTokens = new Buffer(JSON.stringify(tokens)).toString("base64")
+passport.serializeUser ({ _id: id }, done) ->
+  encodedTokens = new Buffer(JSON.stringify({ id })).toString("base64")
   done null, encodedTokens
 
 passport.deserializeUser (encodedTokens, done) ->
