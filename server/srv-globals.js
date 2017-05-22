@@ -20,7 +20,8 @@ global._ = require("lodash");
 
 // ECONNRESET
 process.on("uncaughtException", function (err) {
-  if (err.toString().indexOf("ECONNRESET") !== -1) {
-    console.error(err);
-  } else throw err
+  console.error(err);
+  if (err.toString().indexOf("ECONNRESET") == -1) {
+    throw err
+  }
 });
