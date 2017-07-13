@@ -16,8 +16,6 @@ global.include = function(file) {
   return require(abs_path(file));
 };
 
-global._ = require("lodash");
-
 // ECONNRESET
 process.on("uncaughtException", function (err) {
   console.error(err);
