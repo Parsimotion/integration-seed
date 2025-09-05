@@ -14,7 +14,7 @@ module.exports =
   COOKIE_KEY: "a signature"
   WEBJOB_SIGNATURE: "a signature for webjobs"
   PRODUCTECA_CLIENTID: DEVELOPMENT
-  PRODUCTECA_CLIENTSECRET: "random localhost integration secret!"
+  PRODUCTECA_CLIENTSECRET: "NO_HARDCODED_SECRET_HERE"
 
   AUTHORIZATION_SERVER_URL: "http://producteca-oauth-development.azurewebsites.net"
   PRODUCTECA_API: "http://parsimotion-api-development.azurewebsites.net"
