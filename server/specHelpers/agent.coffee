@@ -5,7 +5,7 @@ nock = require("nock")
 authServer = include("config/environment").producteca
 mockedUser = require("./mockedUser")
 
-token = "randomAccessToken"
+token = "NO_HARDCODED_SECRET_HERE"
 module.exports = ->
   nock(authServer.tokenURL)
     .post ""
